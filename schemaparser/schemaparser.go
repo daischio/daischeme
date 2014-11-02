@@ -1,4 +1,4 @@
-package parser
+package schemaparser
 
 import (
 	"encoding/json"
@@ -14,11 +14,11 @@ type SchProperties map[string]Scheme
  * Struct for holding a JSON-scheme
  */
 type Scheme struct {
-	Type       string        `json:type`
-	Schema     string        `json:$schema`
-	Id         string        `json:id`
-	Required   bool          `json:required`
-	Properties SchProperties `json:properties`
+	Type       string        `json:"type"`
+	Schema     string        `json:"$schema"`
+	Id         string        `json:"id"`
+	Required   bool          `json:"required"`
+	Properties SchProperties `json:"properties"`
 }
 
 /**
