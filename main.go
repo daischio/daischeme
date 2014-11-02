@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./parser"
 	"fmt"
+	"github.com/daischio/daischeme/parser"
 )
 
 func main() {

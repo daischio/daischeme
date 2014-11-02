@@ -2,7 +2,6 @@ package parser
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 )
 
@@ -51,19 +50,7 @@ func ReadSchema(a string) string {
 }
 
 func ParseSchema(a string) *Scheme {
-	json_scheme := parser.ReadSchema(a)
-	parsed_scheme := parser.Parse(json_scheme)
-	return parsed_scheme
-}
-
-func main() {
-	// Read a json schema
-	json_scheme := ReadSchema("./schema/example1.json")
-
-	// Parse the schema
+	json_scheme := ReadSchema(a)
 	parsed_scheme := Parse(json_scheme)
-
-	// Print the structure
-	fmt.Printf("%+v", parsed_scheme)
-
+	return parsed_scheme
 }
