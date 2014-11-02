@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/daischio/daischeme/parser"
+	parser "github.com/daischio/daischeme/schemaparser"
 )
 
 func main() {
