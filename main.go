@@ -16,4 +16,6 @@ func main() {
 	// Generate a model
 	m := model.New("models", "Testmodel", scheme)
 	fmt.Println("%+v", m)
+
+	fmt.Println(model.GenCode(m))
 }

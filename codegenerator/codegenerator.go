@@ -22,30 +22,19 @@ func New(p string, md string, s *schemaparser.Scheme) *Model {
 	return &model
 }
 
-func main() {
-	a := `
-    {
-      "type":"object",
-      "$schema": "http://json-schema.org/draft-03/schema",
-      "id": "http://jsonschema.net",
-      "required":false,
-      "properties":{
-        "firstName": {
-          "type":"string",
-          "id": "http://jsonschema.net/firstName",
-          "required":false
-        },
-        "name": {
-          "type":"string",
-          "id": "http://jsonschema.net/name",
-          "required":false
-        }
-      }
-    }`
+func (m *Model) GenerateHead() string {
+	h := fmt.Sprintf("package %s\n\nimport()\n\n", m.PackageName)
+	return h
+}
 
-	// Get the schema object
-	scheme := schemaparser.Parse(a)
-	m := New("models", "Testmodel", scheme)
-	fmt.Println("%v", m)
+func (m *Model) GenerateField() string {
+	return ""
+}
 
+func (m *Model) GenerateMethod() string {
+	return ""
+}
+
+func GenCode(m CodeGenerator) string {
+	return m.GenerateHead()
 }
