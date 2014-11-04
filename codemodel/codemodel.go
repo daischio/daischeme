@@ -3,6 +3,7 @@ package codemodel
 import (
 	parser "github.com/daischio/daischeme/codemodel/schemaparser"
 	store "github.com/daischio/daischeme/codemodel/schemastore"
+	mapper "github.com/daischio/daischeme/codemodel/schemamapper"
 )
 
 type CodeModel struct {
@@ -11,9 +12,16 @@ type CodeModel struct {
 	Scheme      *parser.Scheme
 }
 
-func (c *CodeModel) GetSchemeStore() *store.SchemaStore {
+/* Return the SchemaStore */
+func (c *CodeModel) GetSchemaStore() *store.SchemaStore {
 	s := store.New(c.Scheme)
 	return s
+}
+
+/* Return the SchemaMapper */
+func (c *CodeModel) GetSchemaMapper() *mapper.SchemaMapper {
+	mapper := mapper.New(c.Scheme)
+	return mapper
 }
 
 /* Generate a new CodeModel instance */

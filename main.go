@@ -11,10 +11,13 @@ func main() {
 	fmt.Printf("%+v\n", m)
 
 	// Generate the SchemaStore from a schema
-	schemaStore := m.GetSchemeStore()
+	schemaStore := m.GetSchemaStore()
 	fmt.Printf("main: %+v\n", *schemaStore.GetSchema())
 
-	schemas := m.GetSchemeStore().GetSchemas()
+	schemas := m.GetSchemaStore().GetSchemas()
 	fmt.Printf("\nSchemas: %+v\n", schemas)
+
+	structs := m.GetSchemaMapper().GetMappedStructs()
+	fmt.Printf("\nStructs: %+v\n", structs)
 
 }
