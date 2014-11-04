@@ -2,20 +2,19 @@ package main
 
 import (
 	"fmt"
-	model "github.com/daischio/daischeme/codegenerator"
-	parser "github.com/daischio/daischeme/schemaparser"
+	"github.com/daischio/daischeme/codemodel"
 )
 
 func main() {
-	// Parse a json schema
-	scheme := parser.ParseSchema("./schema/example1.json")
+	// Generate a model from a schema
+	m := codemodel.New("MyPackage", "MyModel", "./assets/json_example_schema.json")
+	fmt.Printf("%+v\n", m)
 
-	// Print the structure
-	fmt.Printf("%+v\n\n", scheme)
+	// Generate the SchemaStore from a schema
+	schemaStore := m.GetSchemeStore()
+	fmt.Printf("main: %+v\n", *schemaStore.GetSchema())
 
-	// Generate a model
-	m := model.New("models", "Testmodel", scheme)
-	fmt.Println("%+v", m)
+	schemas := m.GetSchemeStore().GetSchemas()
+	fmt.Printf("\nSchemas: %+v\n", schemas)
 
-	fmt.Println(model.GenCode(m))
 }

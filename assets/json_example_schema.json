@@ -1,0 +1,35 @@
+{
+	"type":"object",
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"id": "http://jsonschema.net",
+	"required":false,
+	"properties":{
+		"firstName": {
+			"type":"string",
+			"id": "http://jsonschema.net/firstName",
+			"required":false
+		},
+		"name": {
+			"type":"string",
+			"id": "http://jsonschema.net/name",
+			"required":false
+		},
+        "nested": {
+            "type": "object",
+            "id": "http://jsonschema.net/nested",
+            "required": false,
+            "properties" :{
+                "val1": {
+                    "type":"number",
+                    "id": "http://jsonschema.net/name",
+                    "required":false
+                },
+                "val2": {
+                    "type":"number",
+                    "id": "http://jsonschema.net/name",
+                    "required":false
+                }
+            }
+        }
+	}
+}
