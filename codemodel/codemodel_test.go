@@ -1,4 +1,4 @@
-package codegenerator
+package codemodel
 
 import (
 	"testing"
