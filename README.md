@@ -6,7 +6,7 @@ Daischeme is a code generation library for JSON manipulation in statically typed
 - Export a native library to make it usable in other languages also.
 
 # Module Architecture
-![Module Architecture](https://github.com/aitoroses/daischeme/blob/master/plan/plan.png)
+![Module Architecture](https://github.com/aitoroses/daischeme/blob/master/assets/plan/plan.png)
 
 # Authors
 - Daniel Biedma
